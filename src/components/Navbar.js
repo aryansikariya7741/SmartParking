@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-function Home() {
+function Navbar() {
+  return (
+    <nav style={styles.navbar}>
+      <h2 style={styles.logo}>SmartPark AI</h2>
+      <ul style={styles.navLinks}>
+        <li><a href="#" style={styles.link}>Home</a></li>
+        <li><a href="#" style={styles.link}>Pricing</a></li>
+        <li><a href="#" style={styles.link}>Book Slot</a></li>
+      </ul>
+    </nav>
+  );
+}
+
+function App() {
   const [price, setPrice] = useState(20);
 
   useEffect(() => {
@@ -17,6 +30,7 @@ function Home() {
 
   return (
     <div style={styles.container}>
+      <Navbar />
       <h1 style={styles.title}>Welcome to SmartPark AI</h1>
       <p style={styles.description}>
         AI-powered parking slot detection using YOLO with dynamic pricing.
@@ -34,6 +48,28 @@ const styles = {
     background: "#111",
     color: "white",
     minHeight: "100vh",
+  },
+  navbar: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "15px 30px",
+    background: "#222",
+    color: "white",
+  },
+  logo: {
+    fontSize: "24px",
+    fontWeight: "bold",
+  },
+  navLinks: {
+    listStyle: "none",
+    display: "flex",
+    gap: "20px",
+  },
+  link: {
+    color: "white",
+    textDecoration: "none",
+    fontSize: "18px",
   },
   title: {
     fontSize: "40px",
@@ -63,4 +99,4 @@ const styles = {
   },
 };
 
-export default Home;
+export default App;
